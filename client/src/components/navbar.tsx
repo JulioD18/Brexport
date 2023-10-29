@@ -7,12 +7,11 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import PersonIcon from "@mui/icons-material/Person";
+import Link from "../utils/link";
 
 const pages = ["Scores", "Teams", "Predictions"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -119,13 +118,9 @@ export default function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
+              <Link key={page} to={`/${page.toLowerCase()}`}>
                 {page}
-              </Button>
+              </Link>
             ))}
           </Box>
 

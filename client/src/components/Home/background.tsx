@@ -5,7 +5,6 @@ import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 import Box from "@mui/material/Box";
 import { Divider, Typography } from "@mui/material";
-import "../../styles/background.css";
 import { TypeAnimation } from "react-type-animation";
 
 export default function Background() {
@@ -30,7 +29,6 @@ export default function Background() {
       justifyContent="center"
       alignItems="center"
       height="90vh"
-      position="relative"
       overflow={"hidden"}
     >
       <Particles
@@ -109,7 +107,6 @@ export default function Background() {
         }}
       />
       <Box
-        position="absolute"
         textAlign="center"
         bgcolor="rgb(0, 0, 0, 0.5)"
         width="90%"
@@ -119,7 +116,7 @@ export default function Background() {
       >
         <Box
           maxWidth="70%" // Limit the maximum width of the title container
-          display="inline-block"
+          margin="auto" // Center horizontally
         >
           <Typography variant="h2" style={{ color: "#fff" }}>
             <TypeAnimation

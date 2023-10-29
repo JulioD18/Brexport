@@ -1,20 +1,18 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Link from "../utils/link";
 
 const drawerWidth = 240;
 
@@ -35,24 +33,26 @@ export default function Sidebar(props: Props) {
   };
 
   const drawer = (
-    <Box>
+    <Box overflow="hidden" position="sticky" style={{ zIndex: 1100 }}>
       <Box display="flex" justifyContent="center">
         <Toolbar>
-          <Typography variant="h4" noWrap component="div">
-            Brexport
-          </Typography>
+          <Link to="/">
+            <Typography variant="h4" noWrap component="div">
+              Brexport
+            </Typography>
+          </Link>
         </Toolbar>
       </Box>
       <Divider />
       <List>
         {["Scores", "Teams", "Schedules", "Predictions"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
+          <ListItem key={text}>
+            <Link to={text.toLowerCase()}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
-            </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -63,7 +63,7 @@ export default function Sidebar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box position="absolute">
+    <Box position="fixed" zIndex={1}>
       <Toolbar>
         <IconButton
           color="inherit"
