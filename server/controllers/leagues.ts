@@ -6,6 +6,28 @@ dotenv.config();
 
 const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
 
+export const getLeagues = async (
+  req: Request,
+  res: Response,
+  next: Function
+) => {
+  const { limit, offset } = (req.query as {
+    limit?: number;
+    offset?: number;
+  }) || { limit: 100, offset: 0 };
+
+  try {
+    const leagues = await League.findAll({
+      limit: limit,
+      offset: offset,
+    });
+
+    return res.status(200).json(leagues);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
 /**
  * Get and insert the teams from 'https://v3.football.api-sports.io/teams'
  *
@@ -67,7 +89,7 @@ export const putLeaguesFromAPI = async (
       });
     }
 
-    return res.status(200).json("Team created!");
+    return res.status(200).json("All leagues have been added!");
   } catch (error) {
     return res.status(500).json(error);
   }

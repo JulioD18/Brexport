@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Link from "../utils/link";
+import styles from "../styles/sidebar.module.css";
 
 const drawerWidth = 240;
 
@@ -33,7 +34,12 @@ export default function Sidebar(props: Props) {
   };
 
   const drawer = (
-    <Box overflow="hidden" position="sticky" style={{ zIndex: 1100 }}>
+    <Box
+      className={styles["custom-bar"]}
+      overflow="hidden"
+      position="sticky"
+      style={{ zIndex: 1100 }}
+    >
       <Box display="flex" justifyContent="center">
         <Toolbar>
           <Link to="/">
@@ -45,7 +51,7 @@ export default function Sidebar(props: Props) {
       </Box>
       <Divider />
       <List>
-        {["Scores", "Teams", "Schedules", "Predictions"].map((text, index) => (
+        {["Scores", "Teams", "Leagues", "Predictions"].map((text, index) => (
           <ListItem key={text}>
             <Link to={text.toLowerCase()}>
               <ListItemIcon>

@@ -1,0 +1,4 @@
+.custom-bar {
+  /* Set the box shadow on the right side */
+  box-shadow: -10px 0 10px linear-gradient(45deg, #d5ff00, #057a26);
+}

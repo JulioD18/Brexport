@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 
 import LandingPage from "./components/Home/landing";
 import Scores from "./components/Scores/scores";
+import Leagues from "./components/Leagues/leagues";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/scores" element={<Scores />} />
+          <Route path="/leagues" element={<Leagues />} />
         </Routes>
       </Box>
     </>

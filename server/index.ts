@@ -4,8 +4,8 @@ import cors from "cors";
 
 import { sequelize } from "./datasource.js";
 
-import { putTeamsFromAPI } from "./controllers/teams.js";
-import { putLeaguesFromAPI } from "./controllers/leagues.js";
+import { teamRouter } from "./routes/team-routes.js";
+import { leagueRouter } from "./routes/league-routes.js";
 
 const app: Express = express();
 app.use(cors());
@@ -17,8 +17,8 @@ app.use(bodyParser.json());
   await sequelize.sync({ alter: { drop: false } });
 })();
 
-app.put("/api/teams", putTeamsFromAPI);
-app.put("/api/leagues", putLeaguesFromAPI);
+app.use("/api/teams", teamRouter());
+app.use("/api/leagues", leagueRouter());
 
 app.listen(3001, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${3001}`);
