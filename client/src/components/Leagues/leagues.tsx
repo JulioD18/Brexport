@@ -38,6 +38,7 @@ export default function Leagues() {
               component="div"
               color="white"
               height="20%"
+              marginBottom="0"
             >
               LEAGUES
             </Typography>
@@ -46,7 +47,7 @@ export default function Leagues() {
       </Box>
       <Box
         display="flex"
-        height="100%"
+        height="90%"
         width="100%"
         justifyContent="center" // Center map horizontally
         alignItems="center" // Center map vertically

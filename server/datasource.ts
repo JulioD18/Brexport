@@ -10,4 +10,5 @@ const host = process.env.POSTGRES_HOST || "localhost";
 export const sequelize = new Sequelize(db, user, password, {
   host: host,
   dialect: "postgres",
+  logging: false,
 });
