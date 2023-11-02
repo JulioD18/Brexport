@@ -4,7 +4,7 @@ import { chat } from "../controllers/chat";
 export const chatRouter = () => {
   const router = Router();
 
-  router.put("/", chat);
+  router.post("/", chat);
 
   return router;
 };

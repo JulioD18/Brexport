@@ -13,7 +13,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import PersonIcon from "@mui/icons-material/Person";
 import Link from "../utils/link";
 
-const pages = ["Scores", "Teams", "Leagues", "Predictions"];
+const pages = ["Scores", "Teams", "Leagues", "Predictions", "Chat"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export default function Navbar() {
