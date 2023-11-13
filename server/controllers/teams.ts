@@ -125,3 +125,25 @@ export const putTeamsFromAPI = async (
     return res.status(500).json(error);
   }
 };
+
+export const getTeams = async (req: Request, res: Response, next: Function) => {
+  try {
+    const { league } = req.query as { league?: string };
+
+    if (!league || !Object.keys(League).includes(league)) {
+      return res.status(400).json("Bad request");
+    }
+
+    const leagueId: any = League[league as keyof typeof League];
+
+    const teams = await Team.findAll({
+      where: { LeagueId: leagueId },
+      attributes: ["id", "name", "code", "country", "founded"],
+    });
+
+    return res.status(200).json(teams);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json(error);
+  }
+};

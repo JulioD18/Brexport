@@ -1,19 +1,15 @@
-import { GET_LEAGUES } from "./actions";
+import { GET_TEAMS } from "./actions";
 
 import store from "../store";
-
-// // import env
-// import dotenv from "dotenv";
-// dotenv.config();
 
 const dispatch = store.dispatch;
 const url = "http://localhost:3001/api";
 
-export const getLeagues = (limit: number, offset: number) => {
+export const getTeams = (league: string, limit: number, offset: number) => {
   return async () => {
     try {
       const response = await fetch(
-        `${url}/leagues?limit=${limit}&offset=${offset}`,
+        `${url}/teams?team=${league}&limit=${limit}&offset=${offset}`,
         {
           method: "GET",
           headers: {
@@ -22,11 +18,11 @@ export const getLeagues = (limit: number, offset: number) => {
         }
       );
 
-      const leagues = await response.json();
+      const teams = await response.json();
 
       dispatch({
-        type: GET_LEAGUES,
-        payload: leagues,
+        type: GET_TEAMS,
+        payload: teams,
       });
     } catch (error) {
       console.log(error);
