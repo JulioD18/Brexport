@@ -8,8 +8,9 @@ const url = "http://localhost:3001/api";
 export const getTeams = (league: string, limit: number, offset: number) => {
   return async () => {
     try {
+      console.log(league);
       const response = await fetch(
-        `${url}/teams?team=${league}&limit=${limit}&offset=${offset}`,
+        `${url}/teams?league=${league}&limit=${limit}&offset=${offset}`,
         {
           method: "GET",
           headers: {

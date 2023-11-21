@@ -5,6 +5,7 @@ import { Toolbar, Typography } from "@mui/material";
 
 import style from "../../utils/style";
 import basicStyles from "../../styles/basic.module.css";
+import TeamTable from "./teamtable";
 
 export default function Teams() {
   useEffect(() => {
@@ -42,6 +43,16 @@ export default function Teams() {
             </Typography>
           </Toolbar>
         </Box>
+      </Box>
+      <Box
+        display="flex"
+        height="90%"
+        width="80%"
+        justifyContent="center" // Center map horizontally
+        alignItems="top" // Center map vertically
+        pt={2}
+      >
+        <TeamTable />
       </Box>
     </Box>
   );
