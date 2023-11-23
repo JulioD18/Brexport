@@ -1,4 +1,4 @@
-import { GET_TEAMS } from "../actions/actions";
+import { GET_TEAMS, GET_STATS } from "../actions/actions";
 
 const initialState = {
   teams: [],
@@ -15,6 +15,11 @@ export default function teamReducer(
       return {
         ...state,
         teams: payload,
+      };
+    case GET_STATS:
+      return {
+        ...state,
+        stat: payload,
       };
     default:
       return state;

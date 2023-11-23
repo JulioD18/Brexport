@@ -1,4 +1,4 @@
-import { GET_TEAMS } from "./actions";
+import { GET_TEAMS, GET_STATS } from "./actions";
 
 import store from "../store";
 
@@ -45,6 +45,11 @@ export const getTeamStats = (team: string, league: string) => {
       );
 
       const teamStats = await response.json();
+
+      dispatch({
+        type: GET_STATS,
+        payload: teamStats,
+      });
 
       return teamStats;
     } catch (error) {

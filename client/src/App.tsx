@@ -18,7 +18,7 @@ function App() {
           <Route path="/leagues" element={<Leagues />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/teams" element={<Teams />} />
-          <Route path="/teams/:id" element={<TeamStat />} />
+          <Route path="/teams/:league/:team" element={<TeamStat />} />
         </Routes>
       </Box>
     </>
