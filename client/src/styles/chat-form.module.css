@@ -1,0 +1,6 @@
+.send {
+  background: linear-gradient(to right, #d5ff00, #00ff3f);
+  border-radius: 50%;
+  color: black;
+  padding: 0.5rem;
+}

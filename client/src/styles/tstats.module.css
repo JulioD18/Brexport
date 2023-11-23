@@ -1,0 +1,17 @@
+.stats-box {
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0)
+  );
+  width: 80%;
+  margin: 1rem auto; /* Updated */
+  /*Center the content of the page*/
+  align-items: center;
+  justify-content: center;
+}

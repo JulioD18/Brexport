@@ -1,0 +1,25 @@
+.custom-body {
+  background-color: rgba(0, 0, 0, 0.9);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0)
+  );
+  overflow: hidden;
+}
+
+.custom-title {
+  background-color: rgba(0, 0, 0);
+  border-bottom: 1px solid #d5ff00;
+  padding-bottom: 1rem;
+}
+
+.divid {
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.messages-container {
+  height: 100%;
+  overflow: auto !important;
+}

@@ -1,0 +1,16 @@
+.custom-table {
+  /* Set the shadow to the right */
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-table::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px; /* Adjust the distance from the right */
+  width: 10px; /* Adjust the width of the shadow */
+  height: 100%;
+  background: linear-gradient(45deg, #d5ff00, #057a26);
+  z-index: -1; /* Place it behind the table */
+}
