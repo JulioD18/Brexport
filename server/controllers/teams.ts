@@ -216,6 +216,7 @@ export const getTeamStats = async (
     const teamStats = await TStat.findAll({
       where: { team, league },
       attributes: [
+        "season",
         "games",
         "wins",
         "loses",
